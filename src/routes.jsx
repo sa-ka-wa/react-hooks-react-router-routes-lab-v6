@@ -1,29 +1,33 @@
-import Home from "./components/Home";
-import Actors from "./components/Actors";
-import Directors from "./components/Directors";
-import Movie from "./components/Movie";
-import ErrorPage from "./components/ErrorPage";
+import Home from "./pages/Home";
+import Actors from "./pages/Actors";
+import Directors from "./pages/Directors";
+import Movie from "./pages/Movie";
+import NotFound from "./pages/NotFound";
 
 const routes = [
   {
     path: "/",
     element: <Home />,
-    errorElement: <ErrorPage />,
+    errorElement: <NotFound />,
   },
   {
     path: "/actors",
     element: <Actors />,
-    errorElement: <ErrorPage />,
+    errorElement: <NotFound />,
   },
   {
     path: "/directors",
     element: <Directors />,
-    errorElement: <ErrorPage />,
+    errorElement: <NotFound />,
   },
   {
     path: "/movie/:id",
     element: <Movie />,
-    errorElement: <ErrorPage />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ];
 
